@@ -12,6 +12,7 @@ describe Card do
         end
       end
     end
+    
 
     it "Raises an ArgumentError for invalid parameters" do
       proc {Card.new(0, :diamonds)}.must_raise ArgumentError
