@@ -48,6 +48,10 @@ describe Deck do
       @deck.cards.length.must_equal start_length - 1
     end
 
+    # Interesting edge case: What happens at the bottom
+    # of the deck?
+    # Expected behavior: you can draw the last card, but
+    # after that you get an error
     it 'lets you draw all 52 cards' do
       52.times do
         @deck.draw
@@ -55,7 +59,7 @@ describe Deck do
       @deck.cards.must_be :empty?
     end
 
-    it 'raises an error when you try to draw when the deck is empty' do
+    it 'raises an error when the deck is empty' do
       52.times do
         @deck.draw
       end
