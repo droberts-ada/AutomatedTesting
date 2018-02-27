@@ -5,9 +5,10 @@ class Card
   attr_reader :value, :suit
 
   SUITS = [:hearts, :spades, :clubs, :diamonds]
+  VALUES = (1..13)
 
   def initialize(value, suit)
-    unless (1..13).include? value
+    unless VALUES.include? value
       raise ArgumentError.new("Invalid value #{value}")
     end
 
